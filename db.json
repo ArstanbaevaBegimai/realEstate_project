@@ -1,0 +1,70 @@
+{
+  "houses": [
+    {
+      "id": 1,
+      "title": "Beautiful new apartment",
+      "rooms": 2,
+      "area": 50,
+      "price": 400,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=0dbda481b8321e7378826611ffdaed9a-4986500-images-thumbs&n=13",
+      "city": "Berlin"
+    },
+    {
+      "id": 2,
+      "title": "Furnished studio apartment",
+      "rooms": 1,
+      "area": 30,
+      "price": 300,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=b5fce57d002c376216723a044acb5fa8-5887964-images-thumbs&n=13",
+      "city": "Paris"
+    },
+    {
+      "id": 3,
+      "title": "Big summer house with seaside",
+      "rooms": 5,
+      "area": 250,
+      "price": 3000,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=b6150690cfe2f7a79afb8ce37839ef9a-5477655-images-thumbs&n=13",
+      "city": "Athens"
+    },
+    {
+      "id": 4,
+      "title": "Cozy studio apartment",
+      "rooms": 1,
+      "area": 50,
+      "price": 450,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=380196238ef113aafae65a0e91ed7c93-5869499-images-thumbs&n=13",
+      "city": "Berlin"
+    },
+    {
+      "id": 5,
+      "title": "Family house",
+      "rooms": 4,
+      "area": 170,
+      "price": 2000,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=f0361b236ccb57d65de3480bbb17aa7f-4535954-images-thumbs&n=13",
+      "city": "Washington"
+    },
+    {
+      "id": 6,
+      "title": "Downtown loft-style apartment",
+      "rooms": 3,
+      "area": 120,
+      "price": 1400,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=de505ceef75956ba55e2e01777074fcc-5504462-images-thumbs&n=13",
+      "city": "New York"
+    }
+  ]
+}
