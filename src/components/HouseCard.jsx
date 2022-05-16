@@ -8,9 +8,11 @@ import Typography from "@mui/material/Typography";
 import HouseCardStyle from "./HouseCardStyle.css";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Link } from "react-router-dom";
 
 const HouseCard = (props) => {
-  const { title, rooms, area, price, currency, image, city } = props;
+
+  const { title, rooms, area, price, currency, image, city, id } = props;
   return (
     <Card sx={{ maxWidth: 345, width: 345 }}>
       <CardMedia component="img" height="200" image={image} alt={title} />
@@ -37,19 +39,21 @@ const HouseCard = (props) => {
       </CardContent>
 
       <CardActions>
-        <Button
-          size="small"
-          sx={{
-            backgroundColor: "#fff",
-            color: "black",
-            "&:hover": {
-              color: "#fff",
-              backgroundColor: "#000",
-            },
-          }}
-        >
-          View details
-        </Button>
+        <Link style={{textDecoration:"none"}} to={`${id}`}>
+          <Button
+            size="small"
+            sx={{
+              backgroundColor: "#fff",
+              color: "black",
+              "&:hover": {
+                color: "#fff",
+                backgroundColor: "#000",
+              },
+            }}
+            >
+            View details
+          </Button>
+        </Link>
         <Button
           size="small"
           sx={{
