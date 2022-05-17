@@ -6,7 +6,7 @@ const Search = ({ search, setSearch }) => {
   return (
     <FormControl
       variant="standard"
-      sx={{ width: "70%", marginTop: "15px", marginLeft: "120px" }}
+      sx={{ width: "600px", marginTop: "15px", marginLeft: "120px" }}
     >
       <InputLabel htmlFor="input-with-icon-adornment">Search house</InputLabel>
       <Input
