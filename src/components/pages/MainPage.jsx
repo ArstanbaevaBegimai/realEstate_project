@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Pagination } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import HouseCard from "../HouseCard";
 import MainPageStyle from "./MainPageStyle.css";
@@ -9,13 +9,16 @@ import Search from "../Search";
 import { useSearchParams } from "react-router-dom";
 
 const MainPage = () => {
-  const { houses, getAllHouses } = useContext(houseContext);
+  const { houses, getAllHouses, pagesCount, _limit } = useContext(houseContext);
 
   const [search, setSearch] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [activePage, setActivePage] = useState(1);
 
   const params = {
     q: search,
+    _page: activePage,
+    _limit,
   };
 
   useEffect(() => {
@@ -26,6 +29,11 @@ const MainPage = () => {
     setSearchParams(params);
     getAllHouses();
   }, [search]);
+
+  useEffect(() => {
+    setSearchParams(params);
+    getAllHouses();
+  }, [activePage]);
 
   if (!houses) {
     return (
@@ -71,6 +79,14 @@ const MainPage = () => {
           );
         })}
       </Container>
+
+      <Pagination
+        style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        count={pagesCount}
+        page={activePage}
+        onChange={(event, value) => setActivePage(value)}
+      />
+
       <Footer />
     </div>
   );
