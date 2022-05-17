@@ -53,6 +53,7 @@ const MainPage = () => {
               description={house.description}
               image={house.image}
               city={house.city}
+              id={house.id}
             />
           );
         })}

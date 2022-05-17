@@ -6,7 +6,7 @@ import AddHouse from "./components/pages/AddHouse";
 import About from "./components/pages/About";
 import Contacts from "./components/pages/Contacts";
 import HouseContextProvider from "./components/contexts/HouseContext";
-// import HouseDetails from ".components/pages/HouseDetails";
+import HouseDetails from "./components/pages/HouseDetails";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
           <Route element={<MainPage />} path="/houses" />
           <Route element={<About />} path="/about" />
           <Route element={<Contacts />} path="/contacts" />
-          {/* <Route element={<HouseDetails />} path="/houses/:houseId" /> */}
+          <Route element={<HouseDetails />} path="/houses/:houseId" />
           <Route element={<AddHouse />} path="/add-house" />
         </Routes>
       </BrowserRouter>
