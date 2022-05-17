@@ -1,18 +1,31 @@
 import { Container } from "@mui/material";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HouseCard from "../HouseCard";
 import MainPageStyle from "./MainPageStyle.css";
 import { houseContext } from "../contexts/HouseContext";
 import Footer from "../Footer";
 import Loader from "../Loader";
 import Search from "../Search";
+import { useSearchParams } from "react-router-dom";
 
 const MainPage = () => {
   const { houses, getAllHouses } = useContext(houseContext);
 
+  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const params = {
+    q: search,
+  };
+
   useEffect(() => {
     getAllHouses();
   }, []);
+
+  useEffect(() => {
+    setSearchParams(params);
+    getAllHouses();
+  }, [search]);
 
   if (!houses) {
     return (
@@ -21,12 +34,12 @@ const MainPage = () => {
       </Container>
     );
   }
-  console.log(houses);
+
   return (
     <div className="container">
       <div className="wallpaper">
         <div className="components-group">
-          <Search />
+          <Search search={search} setSearch={setSearch} />
         </div>
       </div>
 
