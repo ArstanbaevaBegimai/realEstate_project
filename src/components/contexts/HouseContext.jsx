@@ -6,6 +6,8 @@ const INIT_STATE = {
   filteredHouses: null,
   isFiltered: false,
   house: null,
+  pagesCount: 0,
+  _limit: 6,
 };
 
 const ACTIONS = {
@@ -16,12 +18,20 @@ const ACTIONS = {
 const REDUCER = (state, action) => {
   switch (action.type) {
     case ACTIONS.GET_ALL_HOUSES:
-      return { ...state, houses: action.payload };
+      return {
+        ...state,
+        houses: action.payload.data,
+        pagesCount: Math.ceil(
+          action.payload.headers["x-total-count"] / state._limit
+        ),
+      };
     case ACTIONS.GET_HOUSE:
       return { ...state, house: action.payload };
+
+    default:
+      return state;
   }
 };
-
 export const houseContext = createContext();
 
 const API = "http://localhost:8000/houses";
@@ -45,7 +55,13 @@ const HouseContextProvider = ({ children }) => {
 
   const getAllHouses = async () => {
     const response = await axios.get(`${API}${window.location.search}`);
-    dispatch({ type: ACTIONS.GET_ALL_HOUSES, payload: response.data });
+    dispatch({ type: ACTIONS.GET_ALL_HOUSES, payload: response });
+    console.log(response);
+  };
+
+  const deletePost = async (id) => {
+    const response = await axios.delete(`${API}/${id}`);
+    getAllHouses();
   };
 
   return (
@@ -53,9 +69,12 @@ const HouseContextProvider = ({ children }) => {
       value={{
         houses: state.houses,
         house: state.house,
+        pagesCount: state.pagesCount,
+        _limit: state._limit,
         getAllHouses,
         postHouse,
         getHouseById,
+        deletePost,
       }}
     >
       {children}

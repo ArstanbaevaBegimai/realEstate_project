@@ -1,4 +1,5 @@
-import { Container, Button, IconButton, Modal, TextField, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { Button, IconButton, Modal, TextField, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { Container, Pagination } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import HouseCard from "../HouseCard";
 import MainPageStyle from "./MainPageStyle.css";
@@ -27,14 +28,14 @@ const style = {
 };
 
 const MainPage = () => {
-
+  const { houses, getAllHouses, pagesCount, _limit } = useContext(houseContext);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { houses, getAllHouses } = useContext(houseContext);
   const [search, setSearch] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const [isFiltered, setIsFiltered] = useState(false);
+  const [activePage, setActivePage] = useState(1);
 
   const navigate = useNavigate();
   let query = window.location.search
@@ -72,18 +73,23 @@ const MainPage = () => {
 
   const params = {
     q: search,
+    _page: activePage,
+    _limit,
   };
 
   useEffect(() => {
     getAllHouses();
   }, []);
   
-  
-  
   useEffect(() => {
     setSearchParams(params);
     getAllHouses();
   }, [search]);
+
+  useEffect(() => {
+    setSearchParams(params);
+    getAllHouses();
+  }, [activePage]);
   
   useEffect(() => {
     if(isFiltered === false) {
@@ -291,6 +297,13 @@ const MainPage = () => {
           );
         })}
       </Container>
+      <Pagination
+        style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        count={pagesCount}
+        page={activePage}
+        onChange={(event, value) => setActivePage(value)}
+      />
+
       <Footer />
     </div>
   );
