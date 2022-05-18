@@ -4,10 +4,7 @@ import { Search as SearchIcon } from "@mui/icons-material";
 
 const Search = ({ search, setSearch }) => {
   return (
-    <FormControl
-      variant="standard"
-      sx={{ width: "600px", marginTop: "15px", marginLeft: "120px" }}
-    >
+    <FormControl variant="standard" style={{ width: "80%", marginTop: "15px" }}>
       <InputLabel htmlFor="input-with-icon-adornment">Search house</InputLabel>
       <Input
         id="input-with-icon-adornment"
