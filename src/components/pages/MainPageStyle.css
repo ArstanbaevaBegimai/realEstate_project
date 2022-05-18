@@ -10,9 +10,10 @@
 .components-group {
   background-color: white;
   width: 60%;
-  height: 165px;
+  height: 120px;
   margin: 0 auto;
   position: relative;
   top: 345px;
   border-radius: 10px;
+  text-align: center;
 }

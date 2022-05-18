@@ -63,6 +63,11 @@ const HouseContextProvider = ({ children }) => {
     getAllHouses();
   };
 
+  const editPost = async (id, editData) => {
+    const response = await axios.put(`${API}/${id}`, editData);
+    getAllHouses();
+  };
+
   return (
     <houseContext.Provider
       value={{
@@ -74,6 +79,7 @@ const HouseContextProvider = ({ children }) => {
         postHouse,
         getHouseById,
         deletePost,
+        editPost,
       }}
     >
       {children}
