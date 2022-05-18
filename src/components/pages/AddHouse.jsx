@@ -9,7 +9,7 @@ const AddHouse = () => {
   const [data, setData] = useState({
     title: "",
     rooms: 0,
-    area: "",
+    area: 0,
     price: 0,
     currency: "",
     description: "",
@@ -48,10 +48,19 @@ const AddHouse = () => {
                         key={item} 
                         label={item.charAt(0).toUpperCase() + item.slice(1)} 
                         variant="outlined" 
-                        onChange={(event) => setData({
-                          ...data,
-                          [item]: event.target.value
-                        })}/>
+                        onChange={(event) => {
+                          if(item === "price" || item === "area" || item === "rooms") {
+                            setData({
+                            ...data,
+                            [item]: +event.target.value
+                          })
+                          } else {
+                            setData({
+                              ...data,
+                              [item]: event.target.value
+                            })
+                          }
+                      }}/>
             }
           })
         }

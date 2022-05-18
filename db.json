@@ -68,9 +68,9 @@
     },
     {
       "title": "Very cool house",
-      "rooms": "1000",
-      "area": "200",
-      "price": "100000000000",
+      "rooms": 1000,
+      "area": 200,
+      "price": 100000000000,
       "currency": "€",
       "description": "Best house in the world",
       "image": "https://cdn.luxe.digital/media/20220301160150/most-expensive-houses-in-the-world-luxe-digital-1.jpg",
@@ -79,9 +79,9 @@
     },
     {
       "title": "Berlin",
-      "rooms": "3",
-      "area": "70",
-      "price": "340",
+      "rooms": 3,
+      "area": 70,
+      "price": 340,
       "currency": "€",
       "description": "Very good house with swimming pool.",
       "image": "https://images.unsplash.com/photo-1602075432748-82d264e2b463?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjB3aXRoJTIwcG9vbHxlbnwwfHwwfHw%3D&w=1000&q=80",
@@ -90,14 +90,25 @@
     },
     {
       "title": "House with cute garden",
-      "rooms": "4",
-      "area": "95",
-      "price": "240",
+      "rooms": 4,
+      "area": 95,
+      "price": 240,
       "currency": "€",
       "description": "Very good house in Berlin uptown with cute garden.",
       "image": "https://www.ofdesign.net/wp-content/uploads/files/5/3/9/house-with-garden-0-539.jpg",
       "city": "Berlin",
       "id": 9
+    },
+    {
+      "title": "House with beatiful view",
+      "rooms": 3,
+      "area": 50,
+      "price": 380,
+      "currency": "$",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus risus, mattis ut facilisis eget, mollis sed leo. Aenean sollicitudin justo eget nunc congue pharetra. Etiam consequat, ante non auctor imperdiet, felis dui eleifend sem, eleifend scelerisque magna neque at dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus dui neque, malesuada sit amet massa vel, finibus bibendum lectus. In scelerisque lobortis nibh.",
+      "image": "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2018/09/view6-1.jpg",
+      "city": "Paris",
+      "id": 10
     }
   ]
 }
