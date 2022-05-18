@@ -2,9 +2,11 @@ import { Button, Container, FormControl, InputLabel, MenuItem, Select, TextField
 import { Box } from "@mui/system";
 import React, {useState, useContext} from "react";
 import { houseContext } from "../contexts/HouseContext";
+import { AuthValue } from "../contexts/AuthContext";
 
 const AddHouse = () => {
   
+  const {value} = AuthValue();
   const {postHouse} = useContext(houseContext);
   const [data, setData] = useState({
     title: "",
@@ -14,10 +16,9 @@ const AddHouse = () => {
     currency: "",
     description: "",
     image: "",
-    city: ""
+    city: "",
+    email: value.currentUser.email
   })
-
-  console.log(data);
 
   return (
     <Container>
@@ -42,6 +43,8 @@ const AddHouse = () => {
                 <MenuItem value="£">£</MenuItem>
               </Select>
             </FormControl>
+            } else if(item === "email") {
+              return <></>
             } else {
               return <TextField 
                         sx={{my:"10px"}}

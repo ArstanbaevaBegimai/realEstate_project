@@ -11,10 +11,25 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Link } from "react-router-dom";
 import { houseContext } from "./contexts/HouseContext";
 import { useContext } from "react";
+import { AuthValue } from "./contexts/AuthContext";
+import { Container } from "@mui/material";
+import Loader from "./Loader";
 
 const HouseCard = (props) => {
-  const { title, rooms, area, price, currency, image, city, id } = props;
+  const { title, rooms, area, price, currency, image, city, id, email } = props;
   const { deletePost } = useContext(houseContext);
+  const {value} = AuthValue();
+
+  // console.log(props.value.currentUser.email, "email")
+
+  // if(!email || !value.currentUser) {
+  //   return (
+  //     <Container>
+  //       <Loader/>
+  //     </Container>
+  //   )
+  // }
+
   return (
     <Card sx={{ maxWidth: 345, width: 345 }}>
       <CardMedia component="img" height="200" image={image} alt={title} />
@@ -56,33 +71,39 @@ const HouseCard = (props) => {
             View details
           </Button>
         </Link>
-        <Button
-          size="small"
-          sx={{
-            backgroundColor: "#fff",
-            color: "black",
-            "&:hover": {
-              color: "#fff",
-              backgroundColor: "#000",
-            },
-          }}
-          onClick={() => deletePost(id)}
-        >
-          Delete
-        </Button>
-        <Button
-          size="small"
-          sx={{
-            backgroundColor: "#fff",
-            color: "black",
-            "&:hover": {
-              color: "#fff",
-              backgroundColor: "#000",
-            },
-          }}
-        >
-          Edit
-        </Button>
+        {
+          value.currentUser && value.currentUser.email === email ?
+          <>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#fff",
+                color: "black",
+                "&:hover": {
+                  color: "#fff",
+                  backgroundColor: "#000",
+                },
+              }}
+              onClick={() => deletePost(id)}
+            >
+              Delete
+            </Button>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#fff",
+                color: "black",
+                "&:hover": {
+                  color: "#fff",
+                  backgroundColor: "#000",
+                },
+              }}
+            >
+              Edit
+            </Button> 
+          </> :
+        <></>
+        }
       </CardActions>
     </Card>
   );

@@ -39,7 +39,6 @@ const MainPage = () => {
 
   const navigate = useNavigate();
   let query = window.location.search
-  console.log(query)
 
   useEffect(() => {
     if(query === "") {
@@ -221,14 +220,13 @@ const MainPage = () => {
                             rooms: e.target.value
                           })
                         }}/>
-                      <Box sx={{display:{xs:"block",md:"flex"}}}>
+                      <Box sx={{display:{xs:"block",md:"flex"}, my:"10px"}}>
                         <Button 
                           variant="contained" 
                           fullWidth
                           sx=
                           {{
                             mr:"10px",
-                            my:"10px",
                             backgroundColor: "#000",
                             color: "#fff",
                             "&:hover": {
@@ -293,6 +291,7 @@ const MainPage = () => {
               image={house.image}
               city={house.city}
               id={house.id}
+              email={house.email}
             />
           );
         })}
