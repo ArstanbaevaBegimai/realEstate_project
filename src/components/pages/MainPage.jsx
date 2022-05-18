@@ -164,24 +164,31 @@ const MainPage = () => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              width: "50%",
-              margin: "10px auto",
+              width: "80%",
+              margin: "0 auto",
               alignItems: "center",
               position: "relative",
             }}
           >
-            <Typography
-              sx={{ display: "flex", alignItems: "center" }}
-              mr="20px"
-              variant="h6"
-            >
-              ...Search by filters <ArrowForward sx={{ marginLeft: "10px" }} />
-            </Typography>
-            <div>
+            <div style={{ width: "100%" }}>
               {/* MODAL */}
-              <IconButton onClick={handleOpen}>
-                <FilterList />
-              </IconButton>
+              <Button
+                className="filters-btn"
+                onClick={handleOpen}
+                sx={{
+                  width: "100%",
+                  my: "10px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  "&:hover": {
+                    color: "#fff",
+                    backgroundColor: "#000",
+                  },
+                }}
+              >
+                Search by filters
+                {/* <FilterList /> */}
+              </Button>
               <Modal
                 open={open}
                 onClose={handleClose}
@@ -314,10 +321,10 @@ const MainPage = () => {
 
       <Container
         sx={{
-          width: "90%",
+          width: "100%",
           my: "50px",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           gap: "30px",
           flexWrap: "wrap",
           my: "80px",
@@ -341,7 +348,12 @@ const MainPage = () => {
         })}
       </Container>
       <Pagination
-        style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "15px",
+        }}
         count={pagesCount}
         page={activePage}
         onChange={(event, value) => setActivePage(value)}
