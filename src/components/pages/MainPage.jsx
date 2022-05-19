@@ -360,7 +360,6 @@ const MainPage = () => {
         onChange={(event, value) => setActivePage(value)}
       />
 
-      <BookingPayment />
       <Footer />
     </div>
   );

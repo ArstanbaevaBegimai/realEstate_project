@@ -9,14 +9,36 @@ import FormLabel from "@mui/material/FormLabel";
 
 const BookingPayment = () => {
   return (
-    <Container>
+    <Container sx={{ my: "110px" }}>
       <Box>
         <h3>Step 1: Your details</h3>
-        <Box>
-          <TextField required id="outlined-required" label="First name" />
-          <TextField required id="outlined-required" label="Last name" />
-          <TextField required id="outlined-required" label="Email address" />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "350px",
+          }}
+        >
           <TextField
+            sx={{ my: "5px" }}
+            required
+            id="outlined-required"
+            label="First name"
+          />
+          <TextField
+            sx={{ my: "5px" }}
+            required
+            id="outlined-required"
+            label="Last name"
+          />
+          <TextField
+            sx={{ my: "5px" }}
+            required
+            id="outlined-required"
+            label="Email address"
+          />
+          <TextField
+            sx={{ my: "5px" }}
             required
             id="outlined-required"
             label="Cell phone number"
@@ -27,7 +49,7 @@ const BookingPayment = () => {
         <h3>Step 2: Payment details</h3>
         <Box>
           <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label">
+            <FormLabel sx={{ my: "10px" }} id="demo-radio-buttons-group-label">
               Choose payment option
             </FormLabel>
             <RadioGroup
@@ -74,20 +96,47 @@ const BookingPayment = () => {
             </RadioGroup>
           </FormControl>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "350px",
+          }}
+        >
           <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label">
+            <FormLabel sx={{ my: "10px" }} id="demo-radio-buttons-group-label">
               Enter your card information
             </FormLabel>
-            <TextField required id="outlined-required" label="Name on card" />
-            <TextField required id="outlined-required" label="Card number" />
-            <TextField required id="outlined-required" type="date" />
-            <TextField required id="outlined-required" label="Security code" />
+            <TextField
+              sx={{ my: "5px" }}
+              required
+              id="outlined-required"
+              label="Name on card"
+            />
+            <TextField
+              sx={{ my: "5px" }}
+              required
+              id="outlined-required"
+              label="Card number"
+            />
+            <TextField
+              sx={{ my: "5px" }}
+              required
+              id="outlined-required"
+              type="date"
+            />
+            <TextField
+              sx={{ my: "5px" }}
+              required
+              id="outlined-required"
+              label="Security code"
+            />
           </FormControl>
         </Box>
       </Box>
       <Button
         sx={{
+          my: "10px",
           backgroundColor: "#000",
           color: "white",
           "&:hover": {
