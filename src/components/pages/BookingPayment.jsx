@@ -6,8 +6,25 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { houseContext } from "../contexts/HouseContext";
+import { useContext, useEffect } from "react";
 
 const BookingPayment = () => {
+
+  const { getAllHouses, houses } = useContext(houseContext);
+
+  useEffect(() => {
+    getAllHouses()
+    console.log(houses, "111")
+  }, [])
+
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  console.log(cart, "CART")
+
+  let filteredHouses = houses.filter(item => cart.includes(item.id))
+
+  console.log(filteredHouses, "FILTERED HOUSES")
+
   return (
     <Container sx={{ my: "110px" }}>
       <Box>
