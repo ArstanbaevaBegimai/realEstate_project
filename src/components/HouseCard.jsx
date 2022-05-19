@@ -10,6 +10,9 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Link } from "react-router-dom";
 import { houseContext } from "./contexts/HouseContext";
+import { AuthValue } from "./contexts/AuthContext";
+import { Container } from "@mui/material";
+import Loader from "./Loader";
 import { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -27,11 +30,14 @@ const style = {
   p: 4,
   display: "flex",
   flexDirection: "column",
+  overflowY: "scroll",
+  height:"90%"
 };
 
 const HouseCard = (props) => {
-  const { title, rooms, area, price, currency, image, city, id, description } =
+  const { title, rooms, area, price, currency, image, city, id, description, email } =
     props;
+  const {value} = AuthValue();
   const { deletePost, editPost } = useContext(houseContext);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -45,6 +51,7 @@ const HouseCard = (props) => {
     description: description,
     image: image,
     city: city,
+    email: email
   });
 
   return (
@@ -88,34 +95,40 @@ const HouseCard = (props) => {
             View details
           </Button>
         </Link>
-        <Button
-          size="small"
-          sx={{
-            backgroundColor: "#fff",
-            color: "black",
-            "&:hover": {
-              color: "#fff",
-              backgroundColor: "#000",
-            },
-          }}
-          onClick={() => deletePost(id)}
-        >
-          Delete
-        </Button>
-        <Button
-          size="small"
-          sx={{
-            backgroundColor: "#fff",
-            color: "black",
-            "&:hover": {
-              color: "#fff",
-              backgroundColor: "#000",
-            },
-          }}
-          onClick={handleOpen}
-        >
-          Edit
-        </Button>
+        {
+          value.currentUser && value.currentUser.email === email ?
+          <>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#fff",
+                color: "black",
+                "&:hover": {
+                  color: "#fff",
+                  backgroundColor: "#000",
+                },
+              }}
+              onClick={() => deletePost(id)}
+            >
+              Delete
+            </Button>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#fff",
+                color: "black",
+                "&:hover": {
+                  color: "#fff",
+                  backgroundColor: "#000",
+                },
+              }}
+              onClick={handleOpen}
+            >
+              Edit
+            </Button> 
+          </> :
+        <></>
+        }
 
         {/* MODAL */}
 
@@ -179,8 +192,10 @@ const HouseCard = (props) => {
             </Button>
           </Box>
         </Modal>
+
       </CardActions>
     </Card>
   );
 };
+
 export default HouseCard;

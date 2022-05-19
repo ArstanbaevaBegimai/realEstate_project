@@ -10,8 +10,11 @@ import {
 import { Box } from "@mui/system";
 import React, { useState, useContext } from "react";
 import { houseContext } from "../contexts/HouseContext";
+import { AuthValue } from "../contexts/AuthContext";
 
 const AddHouse = () => {
+  
+  const { value } = AuthValue();
   const { postHouse } = useContext(houseContext);
   const [data, setData] = useState({
     title: "",
@@ -22,9 +25,8 @@ const AddHouse = () => {
     description: "",
     image: "",
     city: "",
+    email: value.currentUser.email
   });
-
-  console.log(data);
 
   return (
     <Container sx={{ p: "100px" }}>

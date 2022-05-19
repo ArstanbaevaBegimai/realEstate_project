@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,6 +14,8 @@ import AddBusinessIcon from "@mui/icons-material/AddBusiness";
 import { Link, useNavigate } from "react-router-dom";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { AuthValue } from "./contexts/AuthContext";
+import UserMenu from "./UserMenu";
 
 const pages = [
   { title: "Home", route: "/houses" },
@@ -21,6 +24,10 @@ const pages = [
 ];
 
 const Header = () => {
+
+  const [anchorElMenu, setAnchorElMenu] = useState(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const {value} = AuthValue()
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const navigate = useNavigate();
 
@@ -122,27 +129,71 @@ const Header = () => {
               </Button>
             ))}
           </Box>
+          <Box sx={{display:"flex", alignItems:"center"}}>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Button
-              sx={{
-                backgroundColor: "#fff",
-                color: "black",
-                "&:hover": {
-                  color: "#fff",
-                  backgroundColor: "#000",
-                },
-              }}
-              variant="contained"
-              startIcon={<AddBusinessIcon />}
-              onClick={() => navigate("/add-house")}
-            >
-              Add new post
-            </Button>
-          </Box>
-
-          <Box sx={{ mx: 2 }}>
-            <AccountCircleIcon sx={{ fontSize: 30 }} />
+          
+            <Box sx={{ flexGrow: 0 }}>
+              {
+                value.currentUser ?
+                  <Button
+                    sx={{
+                      backgroundColor: "#fff",
+                      color: "black",
+                      "&:hover": {
+                        color: "#fff",
+                        backgroundColor: "#000",
+                      },
+                    }}
+                    variant="contained"
+                    startIcon={<AddBusinessIcon />}
+                    onClick={() => navigate("/add-house")}
+                  >
+                    Add new post
+                  </Button> :
+                  <Box sx={{display:"flex", alignItems:"center", mr:"20px"}}>
+                      <Button 
+                        variant="contained" 
+                        sx={{
+                          backgroundColor: "#fff",
+                          color: "black",
+                          "&:hover": {
+                            color: "#fff",
+                            backgroundColor: "#000",
+                          },
+                          mr:"20px"
+                        }}
+                        onClick={() => navigate("/register")}>
+                        Register
+                      </Button>
+                      <Typography>or</Typography>
+                  </Box>
+              }
+            </Box>
+              {
+                value.currentUser ?
+                  <Box sx={{ mx: 2 }}>
+                    <IconButton onClick={(event) => {
+                      setUserMenuOpen(true);
+                      setAnchorElMenu(event.currentTarget)
+                    }}>
+                      <AccountCircleIcon sx={{ fontSize: 36, color:"white" }} />
+                    </IconButton>
+                    <UserMenu userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} anchorElMenu={anchorElMenu}/>
+                  </Box> :
+                  <Button
+                    sx={{
+                      backgroundColor: "#fff",
+                      color: "black",
+                      "&:hover": {
+                        color: "#fff",
+                        backgroundColor: "#000",
+                      },
+                      width:"100px"
+                    }}
+                    onClick={() => navigate("/sign-in")}>
+                    Sign In
+                  </Button>
+              }
           </Box>
         </Toolbar>
       </Container>

@@ -56,7 +56,6 @@ const HouseContextProvider = ({ children }) => {
   const getAllHouses = async () => {
     const response = await axios.get(`${API}${window.location.search}`);
     dispatch({ type: ACTIONS.GET_ALL_HOUSES, payload: response });
-    console.log(response);
   };
 
   const deletePost = async (id) => {
