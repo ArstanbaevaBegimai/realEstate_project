@@ -9,6 +9,7 @@
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=0dbda481b8321e7378826611ffdaed9a-4986500-images-thumbs&n=13",
       "city": "Berlin",
+      "email": "user@gmail.com",
       "id": 1
     },
     {
@@ -20,6 +21,7 @@
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=b5fce57d002c376216723a044acb5fa8-5887964-images-thumbs&n=13",
       "city": "Paris",
+      "email": "user@gmail.com",
       "id": 2
     },
     {
@@ -31,7 +33,8 @@
       "currency": "$",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=b6150690cfe2f7a79afb8ce37839ef9a-5477655-images-thumbs&n=13",
-      "city": "Athens"
+      "city": "Athens",
+      "email": "user@gmail.com"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "currency": "$",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=380196238ef113aafae65a0e91ed7c93-5869499-images-thumbs&n=13",
-      "city": "Berlin"
+      "city": "Berlin",
+      "email": "user@gmail.com"
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
       "currency": "$",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=f0361b236ccb57d65de3480bbb17aa7f-4535954-images-thumbs&n=13",
-      "city": "Washington"
+      "city": "Washington",
+      "email": "user@gmail.com"
     },
     {
       "title": "Downtown loft-style apartment",
@@ -63,11 +68,10 @@
       "currency": "$",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=de505ceef75956ba55e2e01777074fcc-5504462-images-thumbs&n=13",
-      "city": "New York",
-      "id": 6
+      "city": "New York"
     },
     {
-      "title": "Very cool house",
+      "title": "Beautiful house with swimming pools and palms",
       "rooms": 1000,
       "area": 200,
       "price": 10000,
@@ -75,10 +79,11 @@
       "description": "Best house in the world",
       "image": "https://cdn.luxe.digital/media/20220301160150/most-expensive-houses-in-the-world-luxe-digital-1.jpg",
       "city": "Almaty",
+      "email": "tommy@gmail.com",
       "id": 7
     },
     {
-      "title": "Berlin",
+      "title": "Apartments with swimming Pool",
       "rooms": 3,
       "area": 70,
       "price": 340,
@@ -86,6 +91,7 @@
       "description": "Very good house with swimming pool.",
       "image": "https://images.unsplash.com/photo-1602075432748-82d264e2b463?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjB3aXRoJTIwcG9vbHxlbnwwfHwwfHw%3D&w=1000&q=80",
       "city": "Berlin",
+      "email": "tommy@gmail.com",
       "id": 8
     },
     {
@@ -97,6 +103,7 @@
       "description": "Very good house in Berlin uptown with cute garden.",
       "image": "https://www.ofdesign.net/wp-content/uploads/files/5/3/9/house-with-garden-0-539.jpg",
       "city": "Berlin",
+      "email": "tommy@gmail.com",
       "id": 9
     },
     {
@@ -108,6 +115,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus risus, mattis ut facilisis eget, mollis sed leo. Aenean sollicitudin justo eget nunc congue pharetra. Etiam consequat, ante non auctor imperdiet, felis dui eleifend sem, eleifend scelerisque magna neque at dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus dui neque, malesuada sit amet massa vel, finibus bibendum lectus. In scelerisque lobortis nibh.",
       "image": "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2018/09/view6-1.jpg",
       "city": "Paris",
+      "email": "tommy@gmail.com",
       "id": 10
     },
     {

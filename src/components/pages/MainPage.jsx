@@ -22,6 +22,7 @@ import FilterList from "@mui/icons-material/FilterList";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
+import BookingPayment from "./BookingPayment";
 
 const style = {
   height: "80%",
@@ -49,7 +50,6 @@ const MainPage = () => {
 
   const navigate = useNavigate();
   let query = window.location.search;
-  console.log(query);
 
   useEffect(() => {
     if (query === "") {
@@ -343,6 +343,7 @@ const MainPage = () => {
               image={house.image}
               city={house.city}
               id={house.id}
+              email={house.email}
             />
           );
         })}
@@ -359,6 +360,7 @@ const MainPage = () => {
         onChange={(event, value) => setActivePage(value)}
       />
 
+      <BookingPayment />
       <Footer />
     </div>
   );
