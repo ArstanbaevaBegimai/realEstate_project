@@ -61,22 +61,25 @@
       "email": "user@gmail.com"
     },
     {
-      "id": 6,
       "title": "Downtown loft-style apartment",
-      "rooms": 3,
+      "rooms": 4,
       "area": 120,
       "price": 1400,
       "currency": "$",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=de505ceef75956ba55e2e01777074fcc-5504462-images-thumbs&n=13",
       "city": "New York",
+<<<<<<< HEAD
       "email": "user@gmail.com"
+=======
+      "id": 6
+>>>>>>> fc067f893181f386720542b371c9b57f07c70b54
     },
     {
       "title": "Beautiful house with swimming pools and palms",
       "rooms": 1000,
       "area": 200,
-      "price": 100000000000,
+      "price": 10000,
       "currency": "€",
       "description": "Best house in the world",
       "image": "https://cdn.luxe.digital/media/20220301160150/most-expensive-houses-in-the-world-luxe-digital-1.jpg",
@@ -119,6 +122,28 @@
       "city": "Paris",
       "email": "tommy@gmail.com",
       "id": 10
+    },
+    {
+      "title": "Los Angeles Hollywood house",
+      "rooms": 10,
+      "area": 550,
+      "price": 15000,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=e292fc694ea92009173a7732c96720e2-4600825-images-thumbs&n=13",
+      "city": "Los Angeles",
+      "id": 11
+    },
+    {
+      "title": "Paris style apartment",
+      "rooms": 2,
+      "area": 56,
+      "price": 2000,
+      "currency": "€",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=df142b14b457cb964f92227db866aed8-5484557-images-thumbs&n=13",
+      "city": "Paris",
+      "id": 12
     }
   ]
 }

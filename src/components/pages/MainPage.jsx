@@ -149,11 +149,35 @@ const MainPage = () => {
       <div className="wallpaper">
         <div className="components-group">
           <Search search={search} setSearch={setSearch} />
-          <Box sx={{display:"flex", justifyContent:"center", width:"50%", margin:"10px auto", alignItems:"center", position:"relative"}}>
-             <Typography sx={{display:"flex", alignItems:"center"}} mr="20px" variant="h6">...Or use filters <ArrowForward sx={{marginLeft:"10px"}}/></Typography>
-             <div>
-{/* MODAL */}
-                <IconButton onClick={handleOpen}><FilterList/></IconButton>
+          <Box 
+            sx={{
+              display: "flex", 
+              justifyContent: "center", 
+              width: "80%", 
+              margin: "0 auto", 
+              alignItems: "center", 
+              position: "relative",
+            }}
+            >
+             <div style={{ width: "100%" }}>
+            {/* MODAL */}
+            <Button
+                className="filters-btn"
+                onClick={handleOpen}
+                sx={{
+                  width: "100%",
+                  my: "10px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  "&:hover": {
+                    color: "#fff",
+                    backgroundColor: "#000",
+                  },
+                }}
+              >
+                Search by filters
+                {/* <FilterList /> */}
+              </Button>
                 <Modal
                   open={open}
                   onClose={handleClose}
@@ -162,71 +186,86 @@ const MainPage = () => {
                 >
                   <Box sx={style}>
                     <Box>
-                      <Typography variant="h6" textAlign="center">Price</Typography>
+                      <Typography variant="h6" textAlign="center">
+                        Price
+                      </Typography>
                       <TextField 
                         fullWidth 
-                        sx={{my:"20px"}} 
+                        sx={{ my: "20px" }} 
                         label="From"
                         value={filters.priceFrom}
                         onChange={(e) => {
                           setFilters({
-                            ...filters, priceFrom: e.target.value
-                          })
-                        }}/>
+                            ...filters,
+                            priceFrom: e.target.value,
+                          });
+                        }}
+                      />
                       <TextField 
                         fullWidth 
-                        sx={{my:"20px"}} 
+                        sx={{ my: "20px" }} 
                         label="To"
                         value={filters.priceTo}
                         onChange={(e) => {
                           setFilters({
-                            ...filters, priceTo: e.target.value
-                          })
-                        }}/>
+                            ...filters,
+                            priceTo: e.target.value,
+                          });
+                        }}
+                      />
                     </Box>
                     <Box>
-                      <Typography variant="h6" textAlign="center">Area m²</Typography>
+                      <Typography variant="h6" textAlign="center">
+                        Area m²
+                      </Typography>
                       <TextField 
                         fullWidth 
-                        sx={{my:"20px"}} 
+                        sx={{ my: "20px" }} 
                         label="From"
                         value={filters.areaFrom}
                         onChange={(e) => {
                           setFilters({
-                            ...filters, areaFrom: e.target.value
-                          })
-                        }}/>
+                            ...filters,
+                            areaFrom: e.target.value,
+                          });
+                        }}
+                      />
                       <TextField 
                         fullWidth 
-                        sx={{my:"20px"}} 
+                        sx={{ my: "20px" }} 
                         label="To"
                         value={filters.areaTo}
                         onChange={(e) => {
                           setFilters({
-                            ...filters, areaTo: e.target.value
-                          })
-                        }}/>
+                            ...filters,
+                            areaTo: e.target.value,
+                          });
+                        }}
+                      />
                     </Box>
                     <Box>
-                      <Typography variant="h6" textAlign="center">Rooms</Typography>
+                      <Typography variant="h6" textAlign="center">
+                        Rooms
+                      </Typography>
                       <TextField
                         fullWidth 
-                        sx={{my:"20px"}} 
+                        sx={{ my: "20px" }} 
                         label="Rooms"
                         value={filters.rooms}
                         onChange={(e) => {
                           setFilters({
                             ...filters,
-                            rooms: e.target.value
-                          })
-                        }}/>
-                      <Box sx={{display:{xs:"block",md:"flex"}, my:"10px"}}>
+                            rooms: e.target.value,
+                          });
+                        }}
+                      />
+                      <Box sx={{ display: { xs: "block", md: "flex" } }}>
                         <Button 
                           variant="contained" 
                           fullWidth
-                          sx=
-                          {{
-                            mr:"10px",
+                          sx={{
+                            mr: "10px",
+                            my: "10px",
                             backgroundColor: "#000",
                             color: "#fff",
                             "&:hover": {
@@ -238,7 +277,9 @@ const MainPage = () => {
                             filterHandler();
                             handleClose();
                           }}
-                          >Apply Filters</Button>
+                          >
+                            Apply Filters
+                          </Button>
                           <Button
                               variant="contained" 
                               fullWidth
@@ -256,7 +297,9 @@ const MainPage = () => {
                                 resetHandler();
                                 handleClose();
                               }}
-                            >Reset Filters</Button>
+                            >
+                              Reset Filters
+                            </Button>
                       </Box>
                     </Box>
                   </Box>
@@ -269,10 +312,10 @@ const MainPage = () => {
 
       <Container
         sx={{
-          width: "90%",
+          width: "100%",
           my: "50px",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           gap: "30px",
           flexWrap: "wrap",
           my: "80px",
@@ -297,7 +340,12 @@ const MainPage = () => {
         })}
       </Container>
       <Pagination
-        style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "15px",
+        }}
         count={pagesCount}
         page={activePage}
         onChange={(event, value) => setActivePage(value)}

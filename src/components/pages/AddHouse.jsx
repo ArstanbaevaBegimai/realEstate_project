@@ -29,10 +29,11 @@ const AddHouse = () => {
   });
 
   return (
-    <Container>
+    <Container sx={{ p: "100px" }}>
       <Box
         sx={{
-          my: "100px",
+          backgroundColor: "white",
+          m: "0 auto",
           p: "20px",
           border: "1px solid #dfdfdf",
           display: "flex",
@@ -88,7 +89,14 @@ const AddHouse = () => {
           }
         })}
         <Button
-          sx={{ backgroundColor: "#000" }}
+          sx={{
+            backgroundColor: "#000",
+            color: "#fff",
+            "&:hover": {
+              color: "#000",
+              backgroundColor: "#fff",
+            },
+          }}
           variant="contained"
           onClick={() => postHouse(data)}
         >
