@@ -4,7 +4,7 @@
       "title": "Beautiful new cozy apartment",
       "rooms": 2,
       "area": 50,
-      "price": 400,
+      "price": 500,
       "currency": "$",
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
       "image": "https://avatars.mds.yandex.net/i?id=0dbda481b8321e7378826611ffdaed9a-4986500-images-thumbs&n=13",
@@ -119,6 +119,18 @@
       "city": "Paris",
       "email": "tommy@gmail.com",
       "id": 10
+    },
+    {
+      "title": "One room no furniture apartment",
+      "rooms": 1,
+      "area": 35,
+      "price": 300,
+      "currency": "$",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos facere reiciendis dolore, sapiente cupiditate ullam quos esse aliquid libero omnis ducimus! Dolor, quis similique? Voluptas delectus nihil voluptate eos.",
+      "image": "https://avatars.mds.yandex.net/i?id=28159780583911613e9d6ee6804ad462-5232983-images-thumbs&n=13",
+      "city": "Bishkek",
+      "email": "b.arstanbaeva@gmail.com",
+      "id": 11
     }
   ]
 }

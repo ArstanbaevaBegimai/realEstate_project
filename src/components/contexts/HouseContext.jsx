@@ -8,13 +8,13 @@ const INIT_STATE = {
   house: null,
   pagesCount: 0,
   _limit: 6,
-  cart: null
+  cart: null,
 };
 
 const ACTIONS = {
   GET_ALL_HOUSES: "get-all-houses",
   GET_HOUSE: "get-house",
-  ADD_TO_CART: "add-to-cart"
+  ADD_TO_CART: "add-to-cart",
 };
 
 const REDUCER = (state, action) => {
@@ -30,7 +30,7 @@ const REDUCER = (state, action) => {
     case ACTIONS.GET_HOUSE:
       return { ...state, house: action.payload };
     case ACTIONS.ADD_TO_CART:
-      return {...state, cart: action.payload}
+      return { ...state, cart: action.payload };
     default:
       return state;
   }
@@ -58,17 +58,17 @@ const HouseContextProvider = ({ children }) => {
 
   const addToCart = (id) => {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    if(cartItems.includes(id)) {
-      cartItems = cartItems.filter(item => item != id)
+    if (cartItems.includes(id)) {
+      cartItems = cartItems.filter((item) => item != id);
     } else {
-      cartItems.push(id)
+      cartItems.push(id);
     }
     localStorage.setItem("cart", JSON.stringify(cartItems));
     dispatch({
       type: ACTIONS.ADD_TO_CART,
-      payload: cartItems
-    })
-  }
+      payload: cartItems,
+    });
+  };
 
   const getAllHouses = async () => {
     const response = await axios.get(`${API}${window.location.search}`);
@@ -88,10 +88,10 @@ const HouseContextProvider = ({ children }) => {
   useEffect(() => {
     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     dispatch({
-        type: "ADD_TO_CART",
-        payload: cartItems
-    })
-}, [])
+      type: "ADD_TO_CART",
+      payload: cartItems,
+    });
+  }, []);
 
   return (
     <houseContext.Provider
@@ -106,7 +106,7 @@ const HouseContextProvider = ({ children }) => {
         deletePost,
         editPost,
         addToCart,
-        cart: state.cart
+        cart: state.cart,
       }}
     >
       {children}

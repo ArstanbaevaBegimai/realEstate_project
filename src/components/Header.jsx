@@ -16,7 +16,7 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { AuthValue } from "./contexts/AuthContext";
 import UserMenu from "./UserMenu";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 
 const pages = [
@@ -26,11 +26,10 @@ const pages = [
 ];
 
 const Header = () => {
-
-  const cart = JSON.parse(localStorage.getItem("cart")) || []
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const [anchorElMenu, setAnchorElMenu] = useState(null);
-  const [userMenuOpen, setUserMenuOpen] = useState(false)
-  const {value} = AuthValue()
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const { value } = AuthValue();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const navigate = useNavigate();
 
@@ -132,70 +131,46 @@ const Header = () => {
               </Button>
             ))}
           </Box>
-          {
-            value.currentUser ?
+          {value.currentUser ? (
             <Box>
-              <IconButton sx={{color:"fff"}}>
-                <Badge badgeContent={cart.length} color="error" sx={{mr:"30px"}}>
-                  <ShoppingCartIcon sx={{color:"#fff", fontSize:"32px"}} />
+              <IconButton
+                sx={{ color: "fff" }}
+                onClick={() => navigate("/booking-payment")}
+              >
+                <Badge
+                  badgeContent={cart.length}
+                  color="error"
+                  sx={{ mr: "30px" }}
+                >
+                  <ShoppingCartIcon sx={{ color: "#fff", fontSize: "32px" }} />
                 </Badge>
               </IconButton>
-            </Box> :
-            <></>
-          }
-          <Box sx={{display:"flex", alignItems:"center"}}>
-
-
-          
-            <Box sx={{ flexGrow: 0 }}>
-              {
-                value.currentUser ?
-                  <Button
-                    sx={{
-                      backgroundColor: "#fff",
-                      color: "black",
-                      "&:hover": {
-                        color: "#fff",
-                        backgroundColor: "#000",
-                      },
-                    }}
-                    variant="contained"
-                    startIcon={<AddBusinessIcon />}
-                    onClick={() => navigate("/add-house")}
-                  >
-                    Add new post
-                  </Button> :
-                  <Box sx={{display:"flex", alignItems:"center", mr:"20px"}}>
-                      <Button 
-                        variant="contained" 
-                        sx={{
-                          backgroundColor: "#fff",
-                          color: "black",
-                          "&:hover": {
-                            color: "#fff",
-                            backgroundColor: "#000",
-                          },
-                          mr:"20px"
-                        }}
-                        onClick={() => navigate("/register")}>
-                        Register
-                      </Button>
-                      <Typography>or</Typography>
-                  </Box>
-              }
             </Box>
-              {
-                value.currentUser ?
-                  <Box sx={{ mx: 2 }}>
-                    <IconButton onClick={(event) => {
-                      setUserMenuOpen(true);
-                      setAnchorElMenu(event.currentTarget)
-                    }}>
-                      <AccountCircleIcon sx={{ fontSize: 36, color:"white" }} />
-                    </IconButton>
-                    <UserMenu userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} anchorElMenu={anchorElMenu}/>
-                  </Box> :
+          ) : (
+            <></>
+          )}
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ flexGrow: 0 }}>
+              {value.currentUser ? (
+                <Button
+                  sx={{
+                    backgroundColor: "#fff",
+                    color: "black",
+                    "&:hover": {
+                      color: "#fff",
+                      backgroundColor: "#000",
+                    },
+                  }}
+                  variant="contained"
+                  startIcon={<AddBusinessIcon />}
+                  onClick={() => navigate("/add-house")}
+                >
+                  Add new post
+                </Button>
+              ) : (
+                <Box sx={{ display: "flex", alignItems: "center", mr: "20px" }}>
                   <Button
+                    variant="contained"
                     sx={{
                       backgroundColor: "#fff",
                       color: "black",
@@ -203,12 +178,48 @@ const Header = () => {
                         color: "#fff",
                         backgroundColor: "#000",
                       },
-                      width:"100px"
+                      mr: "20px",
                     }}
-                    onClick={() => navigate("/sign-in")}>
-                    Sign In
+                    onClick={() => navigate("/register")}
+                  >
+                    Register
                   </Button>
-              }
+                  <Typography>or</Typography>
+                </Box>
+              )}
+            </Box>
+            {value.currentUser ? (
+              <Box sx={{ mx: 2 }}>
+                <IconButton
+                  onClick={(event) => {
+                    setUserMenuOpen(true);
+                    setAnchorElMenu(event.currentTarget);
+                  }}
+                >
+                  <AccountCircleIcon sx={{ fontSize: 36, color: "white" }} />
+                </IconButton>
+                <UserMenu
+                  userMenuOpen={userMenuOpen}
+                  setUserMenuOpen={setUserMenuOpen}
+                  anchorElMenu={anchorElMenu}
+                />
+              </Box>
+            ) : (
+              <Button
+                sx={{
+                  backgroundColor: "#fff",
+                  color: "black",
+                  "&:hover": {
+                    color: "#fff",
+                    backgroundColor: "#000",
+                  },
+                  width: "100px",
+                }}
+                onClick={() => navigate("/sign-in")}
+              >
+                Sign In
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </Container>
