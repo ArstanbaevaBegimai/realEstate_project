@@ -16,6 +16,8 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { AuthValue } from "./contexts/AuthContext";
 import UserMenu from "./UserMenu";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge } from "@mui/material";
 
 const pages = [
   { title: "Home", route: "/houses" },
@@ -25,6 +27,7 @@ const pages = [
 
 const Header = () => {
 
+  const cart = JSON.parse(localStorage.getItem("cart")) || []
   const [anchorElMenu, setAnchorElMenu] = useState(null);
   const [userMenuOpen, setUserMenuOpen] = useState(false)
   const {value} = AuthValue()
@@ -129,7 +132,19 @@ const Header = () => {
               </Button>
             ))}
           </Box>
+          {
+            value.currentUser ?
+            <Box>
+              <IconButton sx={{color:"fff"}}>
+                <Badge badgeContent={cart.length} color="error" sx={{mr:"30px"}}>
+                  <ShoppingCartIcon sx={{color:"#fff", fontSize:"32px"}} />
+                </Badge>
+              </IconButton>
+            </Box> :
+            <></>
+          }
           <Box sx={{display:"flex", alignItems:"center"}}>
+
 
           
             <Box sx={{ flexGrow: 0 }}>
