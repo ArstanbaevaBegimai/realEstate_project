@@ -8,21 +8,20 @@ import {
   Grid,
   IconButton,
   Rating,
+  TextField,
   Typography,
 } from "@mui/material";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { houseContext } from "../contexts/HouseContext";
 import Loader from "../Loader";
 
 const HouseDetails = () => {
+  
   const navigate = useNavigate();
-  let targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 30);
-  targetDate = targetDate.toLocaleDateString();
 
   const params = useParams();
-  const { house, getHouseById, houses, getAllHouses } =
+  const { house, getHouseById, houses, getAllHouses, addToCart } =
     useContext(houseContext);
 
   useEffect(() => {
@@ -32,6 +31,8 @@ const HouseDetails = () => {
   useEffect(() => {
     getHouseById(params.houseId);
   }, []);
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   if (!house) {
     return (
@@ -50,7 +51,7 @@ const HouseDetails = () => {
 
   housesFilter.splice(4);
 
-  console.log(housesFilter, "FILTER");
+  console.log(cart);
 
   return (
     <Container maxWidth="100%" sx={{ m: "100px 50px 0 0", width: "100%" }}>
@@ -93,6 +94,7 @@ const HouseDetails = () => {
               </Typography>
               <Typography sx={{ my: "10px" }}>{description}</Typography>
               <Grid sx={{ display: { xs: "flex", md: "none" } }}>
+                
                 <Button
                   variant="contained"
                   sx={{
@@ -100,6 +102,8 @@ const HouseDetails = () => {
                     m: "20px 10px 20px 0",
                     p: "10px",
                   }}
+                  onClick={() => addToCart(id)}
+                  disabled={ cart && cart.includes(id) ? true : false }
                 >
                   Book this house
                 </Button>
@@ -125,22 +129,30 @@ const HouseDetails = () => {
             {price}
             {currency}
           </h2>
+          <TextField 
+                  label="From DD-MM-YYYY"
+                  variant="outlined"
+                  sx={{mb:"20px"}} />
+          <TextField 
+                  label="To DD-MM-YYYY"
+                  variant="outlined"
+                  sx={{mb:"20px"}} />
           <Button
             variant="contained"
-            sx={{ backgroundColor: "#000", m: "20px 10px 20px 0", p: "10px" }}
+            sx={{ 
+              backgroundColor: "#000", 
+              m: "20px 10px 20px 0", 
+              p: "10px" 
+            }}
+            onClick={() => addToCart(id)}
+            disabled={ cart && cart.includes(id) ? true : false }
           >
             Book this house
           </Button>
           <IconButton>
             <FavoriteBorder fontSize="30px" />
           </IconButton>
-          <Typography
-            fontSize="14px"
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <CalendarToday />
-            &nbsp;Book for 30 days until&nbsp;<strong> {targetDate}</strong>
-          </Typography>
+
         </Grid>
       </Grid>
       <Typography
