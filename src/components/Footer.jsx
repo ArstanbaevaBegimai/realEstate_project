@@ -8,12 +8,12 @@ const Footer = () => {
   return (
     <div style={{ width: "100%", backgroundColor: "black", color: "white" }}>
       <Box
-        style={{
+        sx={{
           width: "70%",
           margin: "0 auto",
           display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
+          flexDirection: { md: "row", xs: "column" },
+          justifyContent: { md:"space-between" , xs:"center"},
           padding: "40px",
         }}
       >

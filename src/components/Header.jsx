@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl" style={{ backgroundColor: "#000" }}>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{display:"flex", justifyContent:"space-between"}}>
           <Typography
             variant="h6"
             noWrap
@@ -64,7 +64,7 @@ const Header = () => {
             myHomie
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ width:"max-content" , flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -101,7 +101,7 @@ const Header = () => {
             </Menu>
           </Box>
 
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -117,7 +117,7 @@ const Header = () => {
             }}
           >
             <TravelExploreIcon />
-          </Typography>
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ title, route }) => (
