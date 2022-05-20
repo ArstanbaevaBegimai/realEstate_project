@@ -11,8 +11,9 @@ import { AuthContextProvider } from "./components/contexts/AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 import RegistrationLoginForm from "./components/pages/RegistrationLoginForm";
-import BookingPayment from "./components/pages/BookingPayment";
+import Cart from "./components/pages/Cart";
 import CartDetails from "./components/pages/CartDetails";
+import Payment from "./components/pages/Payment";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -43,7 +44,8 @@ const App = () => {
               element={<RegistrationLoginForm title="Sign in" />}
               path="/sign-in"
             />
-            <Route element={<BookingPayment />} path="/booking-payment" />
+            <Route element={<Cart />} path="/cart" />
+            <Route element={<Payment />} path="/payment" />
           </Routes>
         </AuthContextProvider>
       </BrowserRouter>

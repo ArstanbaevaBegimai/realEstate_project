@@ -17,7 +17,6 @@ import { houseContext } from "../contexts/HouseContext";
 import Loader from "../Loader";
 
 const HouseDetails = () => {
-  
   const navigate = useNavigate();
 
   const params = useParams();
@@ -94,7 +93,6 @@ const HouseDetails = () => {
               </Typography>
               <Typography sx={{ my: "10px" }}>{description}</Typography>
               <Grid sx={{ display: { xs: "flex", md: "none" } }}>
-                
                 <Button
                   variant="contained"
                   sx={{
@@ -103,7 +101,7 @@ const HouseDetails = () => {
                     p: "10px",
                   }}
                   onClick={() => addToCart(id)}
-                  disabled={ cart && cart.includes(id) ? true : false }
+                  disabled={cart && cart.includes(id) ? true : false}
                 >
                   Book this house
                 </Button>
@@ -129,30 +127,36 @@ const HouseDetails = () => {
             {price}
             {currency}
           </h2>
-          <TextField 
-                  label="From DD-MM-YYYY"
-                  variant="outlined"
-                  sx={{mb:"20px"}} />
-          <TextField 
-                  label="To DD-MM-YYYY"
-                  variant="outlined"
-                  sx={{mb:"20px"}} />
+          <TextField
+            label="From DD-MM-YYYY"
+            variant="outlined"
+            sx={{ mb: "20px" }}
+          />
+          <TextField
+            label="To DD-MM-YYYY"
+            variant="outlined"
+            sx={{ mb: "20px" }}
+          />
           <Button
             variant="contained"
-            sx={{ 
-              backgroundColor: "#000", 
-              m: "20px 10px 20px 0", 
-              p: "10px" 
+            sx={{
+              backgroundColor: "#fff",
+              color: "black",
+              "&:hover": {
+                color: "#fff",
+                backgroundColor: "#000",
+              },
+              m: "20px 10px 20px 0",
+              p: "10px",
             }}
             onClick={() => addToCart(id)}
-            disabled={ cart && cart.includes(id) ? true : false }
+            disabled={cart && cart.includes(id) ? true : false}
           >
             Book this house
           </Button>
           <IconButton>
             <FavoriteBorder fontSize="30px" />
           </IconButton>
-
         </Grid>
       </Grid>
       <Typography
