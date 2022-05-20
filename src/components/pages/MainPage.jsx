@@ -22,7 +22,7 @@ import FilterList from "@mui/icons-material/FilterList";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
-import BookingPayment from "./BookingPayment";
+import BookingPayment from "./Cart";
 
 const style = {
   height: "80%",

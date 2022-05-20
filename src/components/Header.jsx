@@ -18,6 +18,7 @@ import { AuthValue } from "./contexts/AuthContext";
 import UserMenu from "./UserMenu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
+import MainPageStyle from "./pages/MainPageStyle.css";
 
 const pages = [
   { title: "Home", route: "/houses" },
@@ -135,7 +136,7 @@ const Header = () => {
             <Box>
               <IconButton
                 sx={{ color: "fff" }}
-                onClick={() => navigate("/booking-payment")}
+                onClick={() => navigate("/cart")}
               >
                 <Badge
                   badgeContent={cart.length}
@@ -153,6 +154,7 @@ const Header = () => {
             <Box sx={{ flexGrow: 0 }}>
               {value.currentUser ? (
                 <Button
+                  size="small"
                   sx={{
                     backgroundColor: "#fff",
                     color: "black",
@@ -165,7 +167,7 @@ const Header = () => {
                   startIcon={<AddBusinessIcon />}
                   onClick={() => navigate("/add-house")}
                 >
-                  Add new post
+                  <span className="post-text">Add new post</span>
                 </Button>
               ) : (
                 <Box sx={{ display: "flex", alignItems: "center", mr: "20px" }}>
