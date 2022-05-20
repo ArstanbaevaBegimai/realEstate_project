@@ -22,4 +22,7 @@
   .post-text {
     display: none;
   }
+  .components-group {
+    width: 90%
+  }
 }
