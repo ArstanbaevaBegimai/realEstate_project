@@ -9,19 +9,7 @@ import FormLabel from "@mui/material/FormLabel";
 import { houseContext } from "../contexts/HouseContext";
 import { useContext, useEffect } from "react";
 
-const BookingPayment = () => {
-
-  const { getAllHouses, houses } = useContext(houseContext);
-
-  useEffect(() => {
-    getAllHouses()
-    console.log(houses, "111")
-  }, [])
-
-  let cart = JSON.parse(localStorage.getItem("cart"));
-
-  let filteredHouses = houses.filter(item => cart.includes(item.id))
-
+const Payment = () => {
   return (
     <Container sx={{ my: "110px" }}>
       <Box>
@@ -165,4 +153,4 @@ const BookingPayment = () => {
   );
 };
 
-export default BookingPayment;
+export default Payment;
