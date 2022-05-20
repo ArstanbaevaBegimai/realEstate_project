@@ -19,11 +19,8 @@ const BookingPayment = () => {
   }, [])
 
   let cart = JSON.parse(localStorage.getItem("cart"));
-  console.log(cart, "CART")
 
   let filteredHouses = houses.filter(item => cart.includes(item.id))
-
-  console.log(filteredHouses, "FILTERED HOUSES")
 
   return (
     <Container sx={{ my: "110px" }}>
