@@ -29,13 +29,20 @@ const Cart = () => {
     <Container sx={{ my: "120px" }}>
       <h2>There are {filteredHouses.length} items in your cart</h2>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Box sx={{ display: { xs:"block", md:"flex"}, justifyContent: "flex-start" }}>
+        <Box
+          sx={{
+            display: { xs: "block", md: "flex" },
+            justifyContent: "flex-start",
+          }}
+        >
           {filteredHouses.map((house) => {
             return (
-              <Card sx={{ width: {xs: "100%", md:"25%"}, mx: {xs:0, md:2} }}>
+              <Card
+                sx={{ width: { xs: "100%", md: "25%" }, mx: { xs: 0, md: 2 } }}
+              >
                 <CardMedia
                   component="img"
-                  sx={{width: "100%"}}
+                  sx={{ width: "100%" }}
                   image={house.image}
                   alt={house.title}
                 />

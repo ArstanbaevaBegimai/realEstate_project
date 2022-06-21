@@ -23,7 +23,7 @@ import ArrowForward from "@mui/icons-material/ArrowForward";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import BookingPayment from "./Cart";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 
 const style = {
   height: "80%",
@@ -185,7 +185,7 @@ const MainPage = () => {
                     color: "#fff",
                     backgroundColor: "#000",
                   },
-                  fontSize:{ md:"16px", xs:"12px"}
+                  fontSize: { md: "16px", xs: "12px" },
                 }}
               >
                 Search by filters
@@ -198,14 +198,15 @@ const MainPage = () => {
                 aria-describedby="modal-modal-description"
               >
                 <Box sx={style}>
-                  <IconButton 
+                  <IconButton
                     sx={{
                       position: "absolute",
-                      top: "0", 
-                      right: "0" 
+                      top: "0",
+                      right: "0",
                     }}
-                    onClick={handleClose}>
-                    <CloseIcon/>
+                    onClick={handleClose}
+                  >
+                    <CloseIcon />
                   </IconButton>
                   <Box>
                     <Typography variant="h6" textAlign="center">
